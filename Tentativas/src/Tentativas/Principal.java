@@ -10,12 +10,14 @@ import java.awt.GridLayout;
 import java.awt.Label;
 import java.awt.Panel;
 import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
  * @author Rafael
  */
-public class Principal {
+public class Principal implements ActionListener{
 
     /**
      * @param args the command line arguments
@@ -30,11 +32,12 @@ public class Principal {
     TextField usTf = new TextField(),
             senhaTf = new TextField();
     
-    public Principal (){
+    public void Principal (){
         f.setSize(300,360);
         f.setLocation(600,200);
         f.setTitle("Login");
         f.setLayout(new GridLayout(3,1));
+        lgBt.addActionListener(this);
         p1.add(usLb);
         p1.add(usTf);
         f.add(p1);
@@ -51,6 +54,16 @@ public class Principal {
     
     public static void main(String[] args) {
         // TODO code application logic here
-        Principal janela = new Principal();
+        Principal p = new Principal();
+        p.Principal();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(this.usTf.getText().equals("Rafael") && this.senhaTf.getText().equals("Senha")){
+            
+            cadastro cad = new cadastro();
+        }
     }
 }
+
