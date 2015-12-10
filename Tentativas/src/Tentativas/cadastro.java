@@ -20,7 +20,7 @@ public class cadastro extends JFrame implements ActionListener{
     public Choice cSex;
     public TextArea taComent;
    
-    public void cadastro(){
+    public cadastro(){
         Label nmLb = new Label("Nome: "),
                 sxLb = new Label("Sexo: "),
                 discLb = new Label("Diciplinas: "),
@@ -65,17 +65,17 @@ public class cadastro extends JFrame implements ActionListener{
         this.add(cmTa);
         this.taComent = cmTa;
         this.add(cdBt);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
     }
     
     public static void main(String Args[]){
         cadastro t = new cadastro();
-        t.cadastro();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Confirm c = new Confirm(this);
+        Conf c = new Conf(this);
     }
     
 }

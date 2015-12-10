@@ -22,12 +22,10 @@ public class Conf extends JFrame implements ActionListener{
     Label cLb = new Label("Deseja cadastrar estas informacoes?");
     Panel p1 = new Panel(),
             p2 = new Panel();
-    cadastro c1;
-    public static cadastro c2;
+    public cadastro c2;
 
     public Conf(cadastro d){
-        this.c1 = d;
-        Conf.c2 = this.c1;
+        c2 = d;
         this.setSize(300,150);
         this.setVisible(true);
         this.setTitle("CONFIRMACAO");
@@ -38,18 +36,15 @@ public class Conf extends JFrame implements ActionListener{
         p2.add(nBt);
         Listeners l2 = new Listeners(this,false);
         nBt.addActionListener(l2);
+        this.add(cLb);
         this.add(p1);
         this.add(p2);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-    
-     public static void main(String[] args) {
-         Conf c = new Conf(c2);
-     }
-
+   
     @Override
     public void actionPerformed(ActionEvent e) {
-        Conf c = new Conf(c1);
+        Conf c = new Conf(c2);
     }
 
    

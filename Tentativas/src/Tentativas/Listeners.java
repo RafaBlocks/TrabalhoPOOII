@@ -35,7 +35,8 @@ public class Listeners implements ActionListener{
                                             "\n"+c.taComent.getText());
         }
         if(r == false){
-            d.setVisible(r);
+            this.d.setVisible(r);
+            JOptionPane.showMessageDialog(null,"Nada Salvo");
         }
     }
     
