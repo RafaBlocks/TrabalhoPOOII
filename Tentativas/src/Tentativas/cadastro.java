@@ -4,18 +4,23 @@ import java.awt.Button;
 import java.awt.Choice;
 import java.awt.Label;
 import java.awt.TextField;
+import java.awt.event.ActionEvent;
 import javax.swing.JFrame;
 import java.awt.List;
 import java.awt.TextArea;
+import java.awt.event.ActionListener;
 
 /**
  *
  * @author Rafael
  */
-public class cadastro extends JFrame{
-    
+public class cadastro extends JFrame implements ActionListener{
+    public TextField tfNome;
+    public List lDisc;
+    public Choice cSex;
+    public TextArea taComent;
    
-    public cadastro(){
+    public void cadastro(){
         Label nmLb = new Label("Nome: "),
                 sxLb = new Label("Sexo: "),
                 discLb = new Label("Diciplinas: "),
@@ -41,24 +46,36 @@ public class cadastro extends JFrame{
         cmLb.setBounds(200, 42, 125, 20);
         cmTa.setBounds(330, 42, 300, 80);
         cdBt.setBounds(260, 190, 90, 20);
+        Conf c1 = new Conf(this);
+        cdBt.addActionListener(c1);
         this.setLayout(null);
         this.setVisible(true);
         this.setResizable(true);
         this.setSize(650, 350);
         this.add(nmLb);
         this.add(nmTf);
+        this.tfNome = nmTf;
         this.add(sxLb);
         this.add(sexC);
+        this.cSex = sexC;
         this.add(discLb);
         this.add(disLs);
+        this.lDisc = disLs;
         this.add(cmLb);
         this.add(cmTa);
+        this.taComent = cmTa;
         this.add(cdBt);
         
     }
     
     public static void main(String Args[]){
         cadastro t = new cadastro();
+        t.cadastro();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Confirm c = new Confirm(this);
     }
     
 }

@@ -29,8 +29,8 @@ public class Principal implements ActionListener{
     Panel p1 = new Panel(),
             p2 = new Panel(),
             pb = new Panel();
-    TextField usTf = new TextField(),
-            senhaTf = new TextField();
+    TextField usTf = new TextField(30),
+            senhaTf = new TextField(30);
     
     public void Principal (){
         f.setSize(300,360);
@@ -60,9 +60,10 @@ public class Principal implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(this.usTf.getText().equals("Rafael") && this.senhaTf.getText().equals("Senha")){
-            
+        if(this.usTf.getText().equals("") && this.senhaTf.getText().equals("")){
+            f.setVisible(false);
             cadastro cad = new cadastro();
+            cad.cadastro();
         }
     }
 }
